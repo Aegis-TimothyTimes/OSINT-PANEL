@@ -1,0 +1,27 @@
+# AEGIS OSINT Panel — never commit these.
+# The bundle is 7 code/doc files + LICENSE; everything below is
+# machine-local (venvs, tool clones, cases, vaults, logs, outputs).
+venv-harvester/
+venv-spider/
+theHarvester/
+recon-ng/
+spiderfoot/
+Sublist3r/
+Photon/
+pagodo/
+Image-ExifTool-*/
+wireless/
+cases/
+maltego/
+__pycache__/
+*.pyc
+*.log
+keys.json
+users.json
+gau-*.txt
+pagodo-*.json
+pagodo-*.txt
+pagodo-*.log
+*.zip
+.DS_Store
+MANIFEST.sha256
