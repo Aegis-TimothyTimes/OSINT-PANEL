@@ -43,6 +43,7 @@ Full operator docs: [OPERATIONS-MANUAL.md](OPERATIONS-MANUAL.md).
 | `users.py` | Operator accounts + per-tool grants (login gate). |
 | `README.md` | This manual. |
 | `OPERATIONS-MANUAL.md` | Full per-section operator manual (also on Desktop). |
+| `EDUCATOR.md` | Classroom one-pager: safe labs, role gates, 30-min lesson. |
 | `LICENSE` | MIT for the panel code (tools keep their own). |
 
 ## Requirements

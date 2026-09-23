@@ -1,0 +1,57 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'>
+<title>AEGIS dossier</title><style>
+body{font-family:sans-serif;max-width:900px;margin:2em auto;background:#14161c;color:#d7dce2;padding:0 1em}
+h1{color:#4da3ff}h2{color:#7cc4ff;border-bottom:1px solid #2a2f3a}code{background:#22262f;padding:1px 5px}table{border-collapse:collapse}td,th{border:1px solid #2a2f3a;padding:4px 10px}li{margin:3px 0}</style></head><body>
+<h1>Background dossier — demo-example</h1>
+<p>_Compiled 2026-09-23 10:51 (AEGIS panel)_</p>
+<p>_Operator: demo_</p>
+<br>
+<h2>Findings</h2>
+<br>
+<h3>Email route (`dry_headers.txt`)</h3>
+<ul><li>From: ceo@example.com</li></ul>
+<ul><li>To: vic@test.org</li></ul>
+<ul><li>Date: Tue, 22 Sep 2026 10:00:00 +0000</li></ul>
+<ul><li>Subject: invoice</li></ul>
+<ul><li>Message-ID: &lt;a@b&gt;</li></ul>
+<ul><li>Reply-To: evil@phish.ru</li></ul>
+<ul><li>Hops: 2</li></ul>
+<ul><li>hop0: from pc1 ([5.6.7.8]) by mx.evil.ru; Mon, 22 Sep 2026 10:00:00 +0000</li></ul>
+<ul><li>hop1: from mx.evil.ru (1.2.3.4) by mx.test.org with SMTP; Mon, 22 Sep 2026 10:01:00 +0000</li></ul>
+<ul><li>SPF: fail</li></ul>
+<ul><li>DKIM: none</li></ul>
+<ul><li>DMARC: fail</li></ul>
+<ul><li>FLAG: SPF fail — treat sender claims skeptically</li></ul>
+<ul><li>FLAG: DMARC fail — treat sender claims skeptically</li></ul>
+<ul><li>FLAG: Reply-To (evil@phish.ru) differs from From (ceo@example.com) — classic phish flag</li></ul>
+<br>
+<h2>Field notes (operator, verbatim)</h2>
+<p>DEMO CASE — built on example.com (reserved documentation domain) with a fictional phish fixture. Everything below is real tool output; nothing here is a real target.</p>
+<br>
+<h2>Methods</h2>
+<ul><li>Sublist3r subdomain enumeration — skipped</li></ul>
+<ul><li>theHarvester sources: <code>crtsh,hackertarget,otx,rapiddns,urlscan,certspotter,duckduckgo</code> (no-key sources) — skipped</li></ul>
+<ul><li>Amass passive enum (no direct probing) — skipped</li></ul>
+<ul><li>Sherlock username sweep — skipped</li></ul>
+<ul><li>Maigret username sweep, top-100 sites — skipped</li></ul>
+<ul><li>gau historic URLs (otx+wayback providers) — skipped</li></ul>
+<ul><li>Pagodo GHDB quick file, 10 dorks — skipped</li></ul>
+<ul><li>Wayback CDX snapshots — archive unreachable (The read operation timed out)</li></ul>
+<ul><li>Photon crawl (emails + subdomains) — skipped</li></ul>
+<ul><li>Nmap service versions (ACTIVE probing — authorized targets only) — skipped</li></ul>
+<ul><li>Video metadata (yt-dlp, no download) — skipped</li></ul>
+<ul><li>Email header route analysis (offline) — </li></ul>
+<ul><li>PhoneInfoga number footprint — skipped</li></ul>
+<ul><li>holehe email-account check — skipped</li></ul>
+<ul><li>Photo metadata — skipped (no photo attached)</li></ul>
+<ul><li>Not in automated runs (by design): SpiderFoot/Recon-ng (interactive consoles), BLE/Deauth (hardware radio + active attack), Maltego (GUI app), ExifTool card (file picker).</li></ul>
+<br>
+<h2>Gaps &amp; caveats</h2>
+<ul><li>Absence in these outputs is not absence in the world.</li></ul>
+<ul><li>Aggregator hits need primary-source confirmation before action.</li></ul>
+<ul><li>Username hits need a second discriminator (bio, photo, location) before attribution — name/handle alone is never enough.</li></ul>
+<ul><li>Wayback: archive unreachable (The read operation timed out).</li></ul>
+<br>
+<h2>Raw evidence</h2>
+<p>`raw/` holds every tool&#x27;s unedited output plus `run.log` with per-tool timings.</p>
+</body></html>
