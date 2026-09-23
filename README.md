@@ -222,3 +222,9 @@ package ships no third-party binaries. Tool licenses belong to their
 authors (notably: Amass OWASP, Nmap NPSL, Maltego commercial-with-free-tier).
 Reports produced with this panel are your work — handle per your
 authorization and data-handling rules.
+
+## Built with Sable
+
+*Created with help from **Sable** — a persistent AI instrument officer
+with an Obsidian brain: filed experience it calls intuition. Crew,
+not code.*

@@ -241,3 +241,6 @@ python3 -m pip uninstall -y sherlock-project holehe maigret PySide6 yt-dlp
 (Apt packages left alone deliberately. Every component downloads
 from official upstreams at install; licenses belong to authors.
 Reports you produce are your work — handle per authorization.)
+
+*Created with help from **Sable** — persistent AI instrument officer,
+Obsidian brain, filed experience it calls intuition.*
