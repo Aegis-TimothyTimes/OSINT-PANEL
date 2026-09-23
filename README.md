@@ -238,3 +238,11 @@ authorization and data-handling rules.
 *Created with help from **Sable** — a persistent AI instrument officer
 with an Obsidian brain: filed experience it calls intuition. Crew,
 not code.*
+
+## ☕ Buy me a coffee
+
+Free forever, but field kits aren't. If the panel earned its keep:
+
+[<img src="screenshots/coffee-qr.png" width="180" alt="Venmo QR">](https://account.venmo.com/u/Timothytimes)
+
+Venmo: **Timothytimes** — [account.venmo.com/u/Timothytimes](https://account.venmo.com/u/Timothytimes)
