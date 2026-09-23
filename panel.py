@@ -25,6 +25,11 @@ HOME = os.path.expanduser("~")
 TOOLS = os.path.join(HOME, "osint-tools")
 BIN = os.path.join(HOME, ".local", "bin")
 sys.path.insert(0, TOOLS)
+if os.environ.get("AEGIS_SYSTEM"):
+    # .deb launch: system bundle wins deterministically, so stale
+    # per-user copies can never shadow an upgrade. Last insert(0)
+    # takes position 0 — that ordering is the whole point.
+    sys.path.insert(0, "/usr/share/aegis-osint")
 
 PANEL_VERSION = "2.5.0"  # bump on any card/tab/engine change
 TC_HOST = "192.168.1.225"  # ThinkCentre LAN IP (see handoff; .local flaps)
@@ -1492,7 +1497,8 @@ class Panel(QMainWindow):
             "Images (*.jpg *.jpeg *.png *.tiff *.heic *.webp);;All files (*)")
         if not path:
             return
-        exe = f"{TOOLS}/Image-ExifTool-13.55/exiftool"
+        exe = (shutil.which("exiftool")
+               or f"{TOOLS}/Image-ExifTool-13.55/exiftool")
         try:
             hi = subprocess.run(
                 [exe, "-s", "-s", "-s",

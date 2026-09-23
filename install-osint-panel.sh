@@ -46,7 +46,8 @@ if ! have nmap || ! have gnome-terminal || ! have xdg-open || ! have curl \
    || ! have iw || ! ldconfig -p 2>/dev/null | grep -q xcb-cursor; then
   sudo apt-get update && sudo apt-get install -y nmap libxcb-cursor0 \
     libportaudio2 git wget unzip curl iw gnome-terminal xdg-utils \
-    python3-pip python3-venv ca-certificates build-essential dkms
+    python3-pip python3-venv ca-certificates build-essential dkms \
+    libimage-exiftool-perl
 else
   echo "    system packages present"
 fi
@@ -143,14 +144,17 @@ fi
 "${BIN}/amass" --version 2>&1 | head -1
 
 # --------------------------------------------------------------- exiftool
-say "ExifTool ${EXIF_VER} (pure-perl, runs in place)"
-if [ ! -x "${TOOLS}/Image-ExifTool-${EXIF_VER}/exiftool" ]; then
-  wget -q "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-${EXIF_VER}.tar.gz" \
-    -O /tmp/exif.tar.gz
-  tar xzf /tmp/exif.tar.gz -C "${TOOLS}/"
-  rm -f /tmp/exif.tar.gz
+say "ExifTool (apt package; legacy tarball only as fallback)"
+if ! command -v exiftool >/dev/null 2>&1; then
+  if [ ! -x "${TOOLS}/Image-ExifTool-${EXIF_VER}/exiftool" ]; then
+    _ex="$(mktemp /tmp/exif.XXXXXX.tar.gz)"
+    wget -q "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-${EXIF_VER}.tar.gz" \
+      -O "$_ex"
+    tar xzf "$_ex" -C "${TOOLS}/"
+    rm -f "$_ex"
+  fi
 fi
-"${TOOLS}/Image-ExifTool-${EXIF_VER}/exiftool" -ver
+exiftool -ver 2>/dev/null || "${TOOLS}/Image-ExifTool-${EXIF_VER}/exiftool" -ver
 
 # -------------------------------------------------------------- bettercap
 say "Bettercap v2.41.7 (BLE mapper + wifi toolkit, single binary)"
@@ -290,7 +294,7 @@ check "${LOCALBIN}/sherlock --version" sherlock
 check "cd ${TOOLS}/spiderfoot && ${TOOLS}/venv-spider/bin/python -c 'import sf'" "spiderfoot-imports"
 check "python3 ${TOOLS}/recon-ng/recon-ng --version" recon-ng
 check "nmap --version" nmap
-check "${TOOLS}/Image-ExifTool-${EXIF_VER}/exiftool -ver" exiftool
+check "exiftool -ver" exiftool
 check "${BIN}/phoneinfoga version" phoneinfoga
 check "${LOCALBIN}/holehe --version" holehe
 check "${LOCALBIN}/maigret --version" maigret
@@ -317,8 +321,8 @@ $(printf "\033[1;32m==> Done. Double-click OSINT Panel.\033[0m")
   Email Headers + the Dorks tab (zero-key pack)
   Maltego: panel guides its .deb + free account (not auto-installed).
    NOTE: panel.py, dossier.py, keys.py, users.py, README.md,
-   OPERATIONS-MANUAL.md, LICENSE and .gitignore ship alongside this
-   installer — copy the bundle together, and place the .py files in
-   ~/osint-tools/ (the panel imports them for its tabs).
-   Read README.md first, OPERATIONS-MANUAL.md second.
+   OPERATIONS-MANUAL.md, EDUCATOR.md, LICENSE and .gitignore ship
+   alongside this installer — copy the bundle together, and place
+   the .py files in ~/osint-tools/ (the panel imports them for its
+   tabs). Read README.md first, OPERATIONS-MANUAL.md second.
 EOF

@@ -46,7 +46,8 @@ TIMEOUTS = {"sublist3r": 600, "harvester": 600, "amass": 900,
 
 PHONEINFOGA = os.path.join(HOME, "bin", "phoneinfoga")
 HOLEHE = os.path.join(BIN, "holehe")
-EXIFTOOL = os.path.join(TOOLS, "Image-ExifTool-13.55", "exiftool")
+EXIFTOOL = (shutil.which("exiftool")
+            or os.path.join(TOOLS, "Image-ExifTool-13.55", "exiftool"))
 MAIGRET = os.path.join(BIN, "maigret")
 PHOTON = os.path.join(TOOLS, "Photon", "photon.py")
 GAU = os.path.join(HOME, "bin", "gau")
