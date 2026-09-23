@@ -5,6 +5,17 @@ machine: no Kali repos, no system surgery, no paid anything required.
 Most tools work with zero keys; keys make some of them dramatically
 better (Keys tab).
 
+## Install — two doors, same house
+
+**Door A — .deb (recommended for field boxes).** Double-click
+`aegis-osint-panel_2.5.0_all.deb`, Install, one password. Menu →
+OSINT Panel → first launch builds the per-user kit. Newer .debs
+upgrade the frame; cases/vaults/tools stay yours.
+
+**Door B — installer script (tinkerers, no root).** Copy the bundle,
+run `./install-osint-panel.sh`. Same result, plus a Desktop icon,
+minus the menu citizenship. Needs its one sudo moment for apt.
+
 Install: `chmod +x install-osint-panel.sh && ./install-osint-panel.sh`.
 One sudo prompt, ~2GB downloads, ends with a 23-check self-test —
 all PASS means double-click **OSINT Panel**. Any FAIL: re-run (it

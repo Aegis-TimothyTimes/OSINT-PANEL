@@ -53,7 +53,16 @@ Full operator docs: [OPERATIONS-MANUAL.md](OPERATIONS-MANUAL.md).
 - A `sudo` password (used ONCE, for: nmap, one display library, small utils)
 - Python 3.10+ already on the system (check: `python3 --version`)
 
-## Install (one command)
+## Install (pick one)
+
+**A — the .deb (recommended).** Download `aegis-osint-panel_2.5.0_all.deb`
+from the repo (or the NetworkShare `osint-panel/` folder), double-click,
+Install, give your password once. Launch **OSINT Panel** from the menu —
+first run builds your personal kit, then the login gate. Updates come as
+newer .debs; your cases, vaults and tools are never touched by them.
+
+**B — the classic script.** Copy the bundle (the 7 code/doc files plus
+this README) anywhere, then:
 
 ```bash
 chmod +x install-osint-panel.sh && ./install-osint-panel.sh
