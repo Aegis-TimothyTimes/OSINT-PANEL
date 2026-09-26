@@ -31,33 +31,36 @@ if os.environ.get("AEGIS_SYSTEM"):
     # takes position 0 — that ordering is the whole point.
     sys.path.insert(0, "/usr/share/aegis-osint")
 
-PANEL_VERSION = "2.5.0"  # bump on any card/tab/engine change
+PANEL_VERSION = "2.6.0"  # bump on any card/tab/engine change
 TC_HOST = "192.168.1.225"  # ThinkCentre LAN IP (see handoff; .local flaps)
 
 STYLE = """
-QMainWindow, QWidget { background: #1a1d24; }
-QLabel { color: #d7dce2; }
-QLabel#title { color: #4da3ff; font-size: 16px; font-weight: bold; }
-QLabel#card { color: #ffffff; font-size: 13px; font-weight: bold; }
-QLabel#desc { color: #9aa4b2; font-size: 11px; }
-QLabel#status { color: #8a93a3; font-size: 11px; }
-QLabel#icon { background: #10131a; border: 1px solid #2a2f3a; }
-QLineEdit { background: #2a2f3a; color: #d7dce2; padding: 6px; }
-QTextEdit { background: #10131a; color: #c8d0dc; font-family: monospace; }
-QPushButton { background: #2a2f3a; color: #d7dce2; padding: 8px;
-              min-height: 34px; font-size: 13px; }
-QPushButton:hover { background: #4da3ff; color: #111; }
+QMainWindow, QWidget { background: #101b26; font-family: "DejaVu Sans"; }
+QLabel { color: #dce9ef; }
+QLabel#title { color: #47c9c2; font-size: 16px; font-weight: bold; }
+QLabel#card { color: #e0edf2; font-size: 13px; font-weight: bold; }
+QLabel#desc { color: #91a9b6; font-size: 11px; }
+QLabel#status { color: #91a9b6; font-size: 11px; }
+QLabel#icon { background: #101820; border: 1px solid #304b59; border-radius: 8px; }
+QLineEdit { background: #1b2936; color: #dce9ef; padding: 6px;
+            border: 1px solid #304b59; border-radius: 3px; }
+QTextEdit { background: #101820; color: #dce9ef; font-family: monospace; }
+QPushButton { background: #1b2936; color: #dce9ef; padding: 8px;
+              min-height: 34px; font-size: 13px;
+              border: 1px solid #304b59; border-radius: 8px; }
+QPushButton:hover { background: #254451; border-color: #6bcaba; }
 QPushButton#go { background: #2e7d4f; color: white; font-weight: bold;
-                 padding: 10px; }
-QPushButton#go:hover { background: #3a9c64; }
-QTabWidget::pane { border: 1px solid #2a2f3a; }
-QTabBar::tab { background: #2a2f3a; color: #d7dce2; padding: 8px 18px; }
-QTabBar::tab:selected { background: #4da3ff; color: #111; }
-QCheckBox { color: #d7dce2; }
-QComboBox { background: #2a2f3a; color: #d7dce2; padding: 6px;
-            min-height: 24px; }
-QComboBox QAbstractItemView { background: #2a2f3a; color: #d7dce2; }
-QFrame#card { background: #22262f; border: 1px solid #2a2f3a; }
+                 padding: 10px; border: 1px solid #304b59; }
+QPushButton#go:hover { background: #3a9c64; border-color: #6bcaba; }
+QTabWidget::pane { border: 1px solid #304b59; }
+QTabBar::tab { background: #1b2936; color: #dce9ef; padding: 8px 18px; }
+QTabBar::tab:selected { background: #47c9c2; color: #101820; }
+QCheckBox { color: #dce9ef; }
+QComboBox { background: #1b2936; color: #dce9ef; padding: 6px;
+            min-height: 24px; border: 1px solid #304b59; border-radius: 3px; }
+QComboBox QAbstractItemView { background: #1b2936; color: #dce9ef; }
+QFrame#card { background: #182a37; border: 1px solid #304b59;
+              border-radius: 12px; }
 """
 
 # name, what it does (field-agent plain English), runner key

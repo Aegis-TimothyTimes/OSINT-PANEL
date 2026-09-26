@@ -9,6 +9,13 @@ One-click control panel + background-dossier builder for OSINT field work.
 20 tools, one window, no terminal spelunking required. Everything runs
 user-local — no Kali repos, no system surgery, no paid dependencies.
 
+> **v2.6.0 — Graphite edition.** The panel now wears the SABLE OS Graphite
+> look (deep-sea backgrounds, aqua accent, 12px cards) so it sits native
+> next to the rest of the desktop. No workflow changes — same 20 cards,
+> same tabs, same pixel icons. Works **standalone** on any Debian/Ubuntu/
+> Mint box, and ships **built in as a native feature of SABLE OS**, a
+> privately developed agentic operating system.
+
 ![Tools tab](screenshots/tools-grid.png)
 ![Dossier tab](screenshots/dossier-tab.png)
 ![Dorks tab](screenshots/dorks-tab.png)
@@ -60,6 +67,7 @@ from the repo (or the NetworkShare `osint-panel/` folder), double-click,
 Install, give your password once. Launch **OSINT Panel** from the menu —
 first run builds your personal kit, then the login gate. Updates come as
 newer .debs; your cases, vaults and tools are never touched by them.
+(The v2.6.0 Graphite restyle is in source now; the .deb re-spin follows.)
 
 **B — the classic script.** Copy the bundle (the 7 code/doc files plus
 this README) anywhere, then:
