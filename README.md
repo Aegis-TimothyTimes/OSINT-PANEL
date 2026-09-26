@@ -62,12 +62,11 @@ Full operator docs: [OPERATIONS-MANUAL.md](OPERATIONS-MANUAL.md).
 
 ## Install (pick one)
 
-**A — the .deb (recommended).** Download `aegis-osint-panel_2.5.0_all.deb`
+**A — the .deb (recommended).** Download `aegis-osint-panel_2.6.0_all.deb`
 from the repo (or the NetworkShare `osint-panel/` folder), double-click,
 Install, give your password once. Launch **OSINT Panel** from the menu —
 first run builds your personal kit, then the login gate. Updates come as
 newer .debs; your cases, vaults and tools are never touched by them.
-(The v2.6.0 Graphite restyle is in source now; the .deb re-spin follows.)
 
 **B — the classic script.** Copy the bundle (the 7 code/doc files plus
 this README) anywhere, then:

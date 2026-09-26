@@ -8,7 +8,7 @@ better (Keys tab).
 ## Install — two doors, same house
 
 **Door A — .deb (recommended for field boxes).** Double-click
-`aegis-osint-panel_2.5.0_all.deb`, Install, one password. Menu →
+`aegis-osint-panel_2.6.0_all.deb`, Install, one password. Menu →
 OSINT Panel → first launch builds the per-user kit. Newer .debs
 upgrade the frame; cases/vaults/tools stay yours.
 
